@@ -12,6 +12,9 @@
       background: #f9f9f9;
       color: #333;
     }
+    #main-content {
+      display: none;
+    }
     header {
       background: #004080;
       color: white;
@@ -42,65 +45,70 @@
       padding-left: 1.5rem;
     }
   </style>
-  <script>
-    var password = prompt("Enter the password to view this page:");
-    if (password !== "onboard123") {
-      document.body.innerHTML = "<h1>Access Denied</h1><p>Incorrect password.</p>";
-    }
-  </script>
 </head>
 <body>
 
-<header>
-  <h1>Welcome to the [Your Department] Team!</h1>
-  <p>We're excited to have you on board 🎉</p>
-</header>
+<script>
+  var password = prompt("Enter the password to view this page:");
+  if (password === "onboard123") {
+    document.getElementById("main-content").style.display = "block";
+  } else {
+    document.write("<h1>Access Denied</h1><p>Incorrect password.</p>");
+  }
+</script>
 
-<nav>
-  <a href="#tools">Tools</a>
-  <a href="#team">Team</a>
-  <a href="#checklist">Checklist</a>
-  <a href="#faq">FAQ</a>
-</nav>
+<div id="main-content">
+  <header>
+    <h1>Welcome to the [Your Department] Team!</h1>
+    <p>We're excited to have you on board 🎉</p>
+  </header>
 
-<section id="tools">
-  <h2>🔧 Tools & Access</h2>
-  <ul>
-    <li>Set up your company email account</li>
-    <li>Log into our Slack workspace</li>
-    <li>Access the shared Google Drive folder</li>
-  </ul>
-</section>
+  <nav>
+    <a href="#tools">Tools</a>
+    <a href="#team">Team</a>
+    <a href="#checklist">Checklist</a>
+    <a href="#faq">FAQ</a>
+  </nav>
 
-<section id="team">
-  <h2>👥 Meet the Team</h2>
-  <p>You’ll be working with:</p>
-  <ul>
-    <li><strong>Manager:</strong> Alex Rivera</li>
-    <li><strong>Mentor:</strong> Jamie Liu</li>
-    <li><strong>Buddy:</strong> Morgan Ellis</li>
-  </ul>
-</section>
+  <section id="tools">
+    <h2>🔧 Tools & Access</h2>
+    <ul>
+      <li>Set up your company email account</li>
+      <li>Log into our Slack workspace</li>
+      <li>Access the shared Google Drive folder</li>
+    </ul>
+  </section>
 
-<section id="checklist">
-  <h2>✅ First Week Checklist</h2>
-  <ul>
-    <li>✅ Attend orientation session</li>
-    <li>✅ Meet your buddy</li>
-    <li>✅ Review our team handbook</li>
-    <li>✅ Set up your development environment</li>
-  </ul>
-</section>
+  <section id="team">
+    <h2>👥 Meet the Team</h2>
+    <p>You’ll be working with:</p>
+    <ul>
+      <li><strong>Manager:</strong> Alex Rivera</li>
+      <li><strong>Mentor:</strong> Jamie Liu</li>
+      <li><strong>Buddy:</strong> Morgan Ellis</li>
+    </ul>
+  </section>
 
-<section id="faq">
-  <h2>❓FAQ</h2>
-  <p><strong>Where do I find the handbook?</strong><br>
-    It's in the onboarding Google Drive folder — ask your buddy if you need access.
-  </p>
-  <p><strong>What if I have tech issues?</strong><br>
-    Email IT at helpdesk@yourcompany.com
-  </p>
-</section>
+  <section id="checklist">
+    <h2>✅ First Week Checklist</h2>
+    <ul>
+      <li>✅ Attend orientation session</li>
+      <li>✅ Meet your buddy</li>
+      <li>✅ Review our team handbook</li>
+      <li>✅ Set up your development environment</li>
+    </ul>
+  </section>
+
+  <section id="faq">
+    <h2>❓FAQ</h2>
+    <p><strong>Where do I find the handbook?</strong><br>
+      It's in the onboarding Google Drive folder — ask your buddy if you need access.
+    </p>
+    <p><strong>What if I have tech issues?</strong><br>
+      Email IT at helpdesk@yourcompany.com
+    </p>
+  </section>
+</div>
 
 </body>
 </html>
