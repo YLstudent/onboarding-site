@@ -49,12 +49,14 @@
 <body>
 
 <script>
-  var password = prompt("Enter the password to view this page:");
-  if (password === "onboard123") {
-    document.getElementById("main-content").style.display = "block";
-  } else {
-    document.write("<h1>Access Denied</h1><p>Incorrect password.</p>");
-  }
+  window.onload = function () {
+    var password = prompt("Enter the password to view this page:");
+    if (password === "onboard123") {
+      document.getElementById("main-content").style.display = "block";
+    } else {
+      document.body.innerHTML = "<h1>Access Denied</h1><p>Incorrect password.</p>";
+    }
+  };
 </script>
 
 <div id="main-content">
